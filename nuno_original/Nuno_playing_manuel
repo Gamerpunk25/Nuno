@@ -1,0 +1,42 @@
+Spielregeln:
+- Jeder Spieler darf nur eine Karte legen, solange er nicht Sonderkarten spielt / zugespielt bekommt, welche das ändern.
+- Auf eine Karte kann man entweder die gleiche Zahl oder die gleiche Farbe legen. 
+- Sonderkarten sind teilweise aus der Regel ausgenommen:
+	- Farbwunsch kann auf jede Farbe gelegt werden
+	- Aussetzen & Richtungswechsel, können nur auf ihre jeweilige Farbe gelegt werden.
+- Die erste Karte auf dem Deck ist die Startkarte.
+	- Ist die erste Karte eine Soderkarte, wird erneut eine Karte gezogen.
+	- Es wird eine Startkarte gelegt, befor die Spieler ihre Karten bekommen.
+- Es gibt zwei Spieler.
+- Jeder Spieler erhällt 7 Karten.
+- Es gibt 56 Karten.
+
+	
+Karten:
+- 0-9 rot/blau/grün/gelb
+- jede Zahl gibt es nur einmal pro Farbe
+
+
+Sonderkarten:
+- Aussetzen
+- Richtungswechsel
+- Farbwunsch 
+- 2x Ziehen /rot/blau/grün/gelb
+- jede Sonderkarte ist 4-mal im Deck vorhanden
+
+
+Spielablauf / Funktion:
+- Es wird eine Verbindung vom Client zum Server aufgebaut.
+- Der Server nimmt die Verbindung an und sendet einen Player request an das PlayingField.
+- Es wird dem Client ein Player zugewiesen. (Socketverbindung)
+- Der Player wird in einer turn Liste abgespeichert.
+- Der erste Player ist der Host und kann Einstellungen vornehmen.
+- Jeder Spieler erhält Standartweise 5 Karten, welche in einer Liste abgespeichert sind.
+- Noch befor die Karten ausgegeben werden, wird eine Karte als Startkarte gelegt.
+
+- Um nun einen Zug zu tätigen, wird man aufgefordert einen index anzugeben, um die jeweilige Karte aus der Hand zu legen.
+- Bei jedem Kartenlegen, wird geprüft ob der Zug valide war oder ob man seinen Zug erneut Tätigen darf.
+- Ist nun der nächst Spieler an der Reihe, wird die turn Liste um 1 weiter druchlaufen. (linked List die Bidirektional ist)
+- Ist im Kartendeck keine Karte mehr zum Ziehen, dann werden alle Karten bis auf die letzte gelegte Karte random in das Deck gemischt.
+
+- Das Spiel läuft auf dem Server und Clients steuern das Spiel über ihre Player-Klasse, welch Einfluss auf das PlayingField hat, welches wiederum mit dem Server kommuniziert.
