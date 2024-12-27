@@ -1,4 +1,4 @@
-public class Card {
+public class Karte {
 
 	private String wert;
 	private String farbe;
