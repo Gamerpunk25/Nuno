@@ -26,7 +26,7 @@ public class Gamehandler implements Runnable {
 	
 //Fremder Quellcodeteil zum extrahieren der Spielanleitung aus dem Package.
 //Dient dem Suchen des Pfades der Spielanleitung vor der Ausgabe
-	private URL Spielanleitung = getClass().getResource("UNO_Spielanleitung.txt");
+	private URL Spielanleitung = getClass().getResource("Nuno_playing_manuel.txt");
 	
 //Savegame: Hand der Mitspieler mit deren Nickname als Unterscheidungskriterium
 //Abgleich der verwendeten Nicknames bevor ein Spiel gestartet wird
